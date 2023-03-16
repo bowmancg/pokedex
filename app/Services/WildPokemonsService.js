@@ -5,9 +5,9 @@ import { pokeApi } from "./AxiosService.js";
 
 class WildPokemonsService {
     async getWildPokemon() {
-        const res = await pokeApi.get('wildPokemon')
+        const res = await pokeApi.get()
         console.log('[wild pokemon]', res.data);
-        appState.wildPokemon = res.data.results
+        appState.wildPokemon = res.data.results.map(p => new wildPokemon(p))
     }
 }
 

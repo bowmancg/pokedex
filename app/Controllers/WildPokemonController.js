@@ -14,7 +14,8 @@ function _drawWildPokemon() {
 export class WildPokemonController {
     constructor() {
         console.log('construct');
-        appState.on('wildPokemon', _drawWildPokemon)
+        this._drawWildPokemon()
+        appState.on('wildPokemon', _drawWildPokemon())
     }
 
     async getWildPokemon() {
